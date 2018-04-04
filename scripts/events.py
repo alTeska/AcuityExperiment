@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def update_attribute(var, attr, value):
     dt = yield
     setattr(var, attr, value)
@@ -27,7 +30,7 @@ def chain_events(events, log=True, motive_client=None):
         #
         #     logging.warn('{mot_time}; {fun_name}; {args}'.format(mot_time=motive_client.timestamp_recording, fun_name=event.__name__,
         #                                                            args=args))
-        # return event
+        return event
 
     events = deque(events)
     event = init_next_event()
