@@ -12,8 +12,11 @@ def update(dt):
 pyglet.clock.schedule(update)
 
 # Insert filename into WavefrontReader.
+# obj_filename = 'assets/2.obj'
+
 obj_filename = rc.resources.obj_primitives
 obj_reader = rc.WavefrontReader(obj_filename)
+
 
 # Create Mesh
 cylinder = obj_reader.get_mesh("Cylinder", scale=.6)
@@ -22,8 +25,11 @@ cylinder.rotation.x = 40
 cylinder.speed = 5.
 cylinder.uniforms['diffuse'] = 1., 1., 1.
 
-texture = rc.Texture.from_image(rc.resources.img_colorgrid)
+# texture = rc.Texture.from_image(rc.resources.img_colorgrid)
+# texture = rc.Texture.from_image('assets/uvgrid_bw.png')
+texture = rc.Texture.from_image('assets/pict.png')
 cylinder.textures.append(texture)
+
 
 vertname = glob(path.join(rc.resources.shader_path, 'default', '*.vert'))[0]
 fragname = glob(path.join(rc.resources.shader_path, 'default', '*.frag'))[0]
@@ -31,17 +37,18 @@ fragname = glob(path.join(rc.resources.shader_path, 'default', '*.frag'))[0]
 shader = rc.Shader.from_file(vert = vertname, frag = fragname)
 
 
-
 # Create Scene
 scene = rc.Scene(meshes=[cylinder])
+
+# seq = [events.update_attribute(cylinder, 'visible', False),
+       # events.wait_duration(20.)]
+
 
 clock = 0.
 def update(dt):
     global clock
     clock += dt
     cylinder.rotation.y += cylinder.speed * dt
-    # virtual_scene.camera.position.xyz = monkey.position.xyz
-    # screen.uniforms['playerPos'] = virtual_scene.camera.position.xyz
 pyglet.clock.schedule(update)
 
 
