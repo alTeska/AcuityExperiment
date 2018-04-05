@@ -50,20 +50,19 @@ seq = [events.update_attribute(cylinder, 'speed', -2),
 
 clock = 0.
 exp = events.chain_events(seq)
-print(type(exp))
+exp.next()
+
 
 def update(dt):
     global clock
     clock += dt
     cylinder.rotation.y = cylinder.speed
-    # exp.send()
-    # exp.next()
 
 
 @window.event
 def on_draw():
     with rc.default_shader:
-        pyglet.clock.schedule(update)
+        pyglet.clock.schedule(exp.send)
         scene.draw()
 
 
