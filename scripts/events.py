@@ -13,12 +13,6 @@ def wait_duration(duration):
         dt = yield
         curr_time += dt
 
-
-def change_scene_background_color(scene, color):
-    dt = yield
-    scene.bgColor = color
-
-
 def chain_events(events):
     def init_next_event():
         event = events.popleft()
