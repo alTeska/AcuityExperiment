@@ -1,6 +1,7 @@
 # Texture settings
-SIZE = 10000
-SCALE = 50
+SIZEX = 10000
+SIZEY = 10000
+SCALE = 25
 CYLINDER_TEXTURE = 'scripts/assets/sin_stripes.png'
 DPI = 500
 
