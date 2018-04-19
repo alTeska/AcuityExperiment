@@ -15,3 +15,11 @@ CYLINDER_ROTATION_X = 90
 PHASE_DURATION_SECS = 5.
 WAIT_DURATION_SECS = 2
 START_TIME = 2
+
+SEQ = None
+
+SEQ = update_attribute(cylinder, 'visible', False),
+    wait_duration(START_TIME),
+    update_attribute(cylinder, 'visible', True),
+    update_attribute(cylinder, 'speed', 10),
+    wait_duration(PHASE_DURATION_SECS),
