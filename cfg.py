@@ -1,8 +1,10 @@
+PATH = 'module/assets/'
+
 # Texture settings
 SIZEX = 10000
 SIZEY = 10000
 SCALE = 25
-CYLINDER_TEXTURE = 'scripts/assets/sin_stripes.png'
+CYLINDER_TEXTURE = PATH + 'sin_stripes.png'
 DPI = 500
 
 # Experiment settings
