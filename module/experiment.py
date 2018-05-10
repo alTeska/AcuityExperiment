@@ -6,8 +6,10 @@ import ratcave as rc
 
 from .events import update_attribute, chain_events, wait_duration
 
+
 def rotate_cylinder(dt, cylinder):
     cylinder.rotation.y += cylinder.speed * dt
+
 
 def update(dt):
     pass
@@ -15,7 +17,6 @@ def update(dt):
 
 def run_experiment(cfg):
     # Create Window
-
     window = pyglet.window.Window()
     pyglet.clock.schedule(update)
 
@@ -31,6 +32,8 @@ def run_experiment(cfg):
     cylinder.uniforms.diffuse = 1., 1., 1.
 
     texture = rc.Texture.from_image(cfg.CYLINDER_TEXTURE)
+    # texture = rc.Texture.from_image('module/assets/uvgrid_bw2.png')
+
     cylinder.textures.append(texture)
     cylinder.speed = 0
 
@@ -48,12 +51,17 @@ def run_experiment(cfg):
 
 
     # Build experiment event sequence
-    seq = [update_attribute(cylinder, 'visible', False),
-           wait_duration(cfg.START_TIME)]
 
-    for speed in random.permutation(cfg.CYLINDER_SPEEDS * 2):
-        for direction in [1, -1]:
-            phase_seq = [
+    if cfg.SEQ:
+        # TODO: add cfg.SEQ interpreter
+        seq = [cfg.SEQ]
+    else:
+        seq = [update_attribute(cylinder, 'visible', False),
+                wait_duration(cfg.START_TIME)]
+
+        for speed in random.permutation(cfg.CYLINDER_SPEEDS * 2):
+            for direction in random.permutation([1, -1]):
+                phase_seq = [
                 update_attribute(cylinder, 'visible', True),
                 update_attribute(cylinder, 'speed', speed * direction),
                 wait_duration(cfg.PHASE_DURATION_SECS),

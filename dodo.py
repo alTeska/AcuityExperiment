@@ -10,9 +10,8 @@ def task_make_grid():
             'scale': cfg.SCALE,
             'sizex': cfg.SIZEX,
             'sizey': cfg.SIZEY,
-            'dpi'  : cfg.DPI,
-            })
-        ],
+            'dpi'  : cfg.DPI,})],
+        'targets':['module/assets/sin.png'],
     }
 
 
