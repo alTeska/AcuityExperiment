@@ -17,7 +17,7 @@ def update(dt):
 
 def run_experiment(cfg):
     # Create Window
-    window = pyglet.window.Window()
+    window = pyglet.window.Window(fullscreen=True)
     pyglet.clock.schedule(update)
 
     # Insert filename into WavefrontReader.
