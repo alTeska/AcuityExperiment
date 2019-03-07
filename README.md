@@ -9,7 +9,7 @@ Part of [Acuity Testing in VR](https://github.com/alTeska/VR_Acuity), look for m
 ## Simulation Vizualization:
 
 <center><figure>
-<p float="center">
+<p align="center">
     <img src="/viz/stim1.gif" width="266">
     <img src="/viz/stim3.gif" width="266">
     <img src="/viz/stim5.gif" width="266">
