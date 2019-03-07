@@ -1,1 +1,10 @@
 /helper
+.doit.db.bak
+.doit.db.dat
+.doit.db.dir
+.ipynb_checkpoints/
+.ropeproject/
+__pycache__/
+module/.ropeproject/
+module/__pycache__/
+module/assets/uvgrid_bw2.pn
