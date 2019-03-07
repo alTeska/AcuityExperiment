@@ -10,9 +10,9 @@ Part of [Acuity Testing in VR](https://github.com/alTeska/VR_Acuity), look for m
 
 <figure><center>
 <p float="left">
-    <img src="/viz/stim1.gif" width="246">
-    <img src="/viz/stim3.gif" width="246">
-    <img src="/viz/stim5.gif" width="246">
+    <img src="/viz/stim1.gif" width="266">
+    <img src="/viz/stim3.gif" width="266">
+    <img src="/viz/stim5.gif" width="266">
 </center></p>
 </figure>
 
